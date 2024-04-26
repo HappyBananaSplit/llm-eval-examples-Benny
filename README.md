@@ -17,14 +17,12 @@ The API keys will allow you to authenticate and interact with the APIs of your L
 
 ### Entering credentials into CircleCI
 
-Entering your OpenAI, Braintrust and LangSmith credentials into CircleCI is easy. Navigate to `Project Settings` > `LLMOps`, and fill out the form by Clicking `Setup Integration`. This will create a context with environment variables with the credentials you've setup above. Make a note of the generated context name.
+Entering your OpenAI, Braintrust and LangSmith credentials into CircleCI is easy. Navigate to `Project Settings` > `LLMOps`, and fill out the form by Clicking `Setup Integration`. This will create a context with environment variables with the credentials you've set up above. Make a note of the generated context name.
 
 ## The CirlceCI LLM-evaluations Orb
 
 The LLM-evaluations Orb simplifies the definition and execution of evaluation jobs using popular third-party tools, and generates reports of evaluation results. 
 
-!!!!!!!
-Also _optionally_, this integration has the ability to save eval summary [Artifacts](https://circleci.com/docs/artifacts/)  and write comments on your PR's with eval results, once the context is created add a `GITHUB_TOKEN` with appropriate permissions. Make a note of the generated context name.
 
 Given the volatile nature of evaluations, evaluations orchestrated by the CircleCI LLM-evaluations orb do not halt the pipeline if an evaluation fails. This approach ensures that the inherent flakiness of evaluations does not disrupt the development cycle. 
 
