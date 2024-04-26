@@ -6,14 +6,24 @@ Collection of LLM eval examples using [ai-evals orb](https://circleci.com/develo
 
 Before runnning any of the examples, you'll need:
 
-- **OpenAI account** - Sign up for an OpenAI account at [openai.com](https://openai.com) to access their platform and API. Once logged into your OpenAI account, genreate your API key. Make note of the `API Key` and `Organization ID`.
-- **Braintrust account** - Sign up for a Braintrust account at [www.braintrust.com](https://www.braintrust.com) to access their platform and API. Once logged into your Braintrust account, generate an `API Key` and make note of it.
-- **LangSmith account** -  Sign up for a LangSmith account at [langsmith.com](https://langsmith.com) to use their language models API. AOnce logged into your LangSmith account, go to the API Keys page in your account settings to generate an API key. Copy this key to authenticate when using the LangSmith API.
-- **CircleCI**
-  1. **Project Setup** - Make sure your project is setup on CircleCI.
-  2. **LLMOps integration** - Setup a CircleCI LLMOps integration to help run evaluations. Go to `Project Settings` > `LLMOps`. Fill out the form by Clicking `Setup Integration`. This will create a context with environment variables with the credentials you've setup above. Also _optionally_, this integration has the ability to save eval summary [Artifacts](https://circleci.com/docs/artifacts/)  and write comments on your PR's with eval results, once the context is created add a `GITHUB_TOKEN` with appropriate permissions. Make a note of the generated context name.
+- A **CircleCI account** connected to yoru code. You can [sign up for free](https://circleci.com/signup/).
+- An **OpenAI account**. Sign up for an OpenAI account at [openai.com](https://openai.com) to access their platform and API. Once logged into your OpenAI account, genreate your API key. Make note of the `API Key` and `Organization ID`.
 
-This will allow you to authenticate and interact with their APIs to leverage their services. See their documentation for more details on capabilities and usage.
+Depending on your choice of evaluation provider, you will also need one of the following:
+- A **Braintrust account**. Sign up for a Braintrust account at [www.braintrust.com](https://www.braintrust.com) to access their platform and API. Once logged into your Braintrust account, generate an `API Key` and make note of it.
+- A **LangSmith account**. Sign up for a LangSmith account at [langsmith.com](https://langsmith.com) to use their language models API. Once logged into your LangSmith account, go to the API Keys page in your account settings to generate an API key. Copy this key to authenticate when using the LangSmith API.
+
+The API keys will allow you to authenticate and interact with the APIs of your LLMOps tools to leverage their services. See their documentation for more details on capabilities and usage.
+
+### Entering credentials into CircleCI
+
+Entering your OpenAI, Braintrust and LangSmith credentials into CircleCI is easy. Navigate to `Project Settings` > `LLMOps`, and fill out the form by Clicking `Setup Integration`. This will create a context with environment variables with the credentials you've setup above. Make a note of the generated context name.
+
+
+
+!!!!!!!
+Also _optionally_, this integration has the ability to save eval summary [Artifacts](https://circleci.com/docs/artifacts/)  and write comments on your PR's with eval results, once the context is created add a `GITHUB_TOKEN` with appropriate permissions. Make a note of the generated context name.
+
 
 ## Orb Parameters
 
