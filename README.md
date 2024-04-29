@@ -19,10 +19,11 @@ The API keys will allow you to authenticate and interact with the APIs of your L
 
 Entering your OpenAI, Braintrust and LangSmith credentials into CircleCI is easy. Navigate to `Project Settings` > `LLMOps`, and fill out the form by Clicking `Setup Integration`. This will create a context with environment variables with the credentials you've set up above. Make a note of the generated context name.
 
+![LLMOps Integration Context](images/LLMOps-Integration-Context.png)
+
 ## The CirlceCI LLM-evaluations Orb
 
 The LLM-evaluations Orb simplifies the definition and execution of evaluation jobs using popular third-party tools, and generates reports of evaluation results. 
-
 
 Given the volatile nature of evaluations, evaluations orchestrated by the CircleCI LLM-evaluations orb do not halt the pipeline if an evaluation fails. This approach ensures that the inherent flakiness of evaluations does not disrupt the development cycle. 
 
@@ -48,38 +49,41 @@ _Some of the parameters are optional based on the eval platform being used._
 
 ##### Braintrust specific parameters
 
-- `braintrust_experiment_name` (optional) - Braintrust experiment name. An experiment name is generated if not set. (default: `''`)
+- `braintrust_experiment_name` (optional) - Braintrust experiment name. We will generate a unique name based on an md5 of "`<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`" if no `braintrust_experiment_name` is provided.
 
 ##### LangSmith specific parameters
 
-- `langsmith_endpoint` - LangSmith API endpoint (default: `''`)
+- `langsmith_endpoint` - (optional) LangSmith API endpoint (default: `https://api.smith.langchain.com`)
 
-- `langsmith_experiment_name` (optional) - LangSmith experiment name. An experiment name is generated if not set. (default: `''`)
+- `langsmith_experiment_name` (optional) - LangSmith experiment name. We will generate a unique name based on an MD5 of "`<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`" if no `langsmith_experiment_name` is provided.  
 
-
-## Get started
+## Getting started
 
 Fork this repo to run evaluations on a LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
-The config.yml file uses the ai-evals orb to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
+At a high level, when the workflow runs, our prompt is sent to OpenAI. We then get the results, and those are then fed to the respective eval platform. CircleCI will then store the results as an Artifact which you can go view. As well, if you've setup a Github Token CircleCI will post the eval result as a comment on your pull request.
+
+The `.circleci/run_evals_config.yml` file uses the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals) to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
 
 For example, the braintrust job runs the Python script in `braintrust/eval_tutorial.py` by passing it as the `cmd` parameter. It saves the evaluation results to the location specified with `evals_result_location`.
 
 Similarly, the langsmith job runs the Python script in `langsmith/eval.py`.
 
-To save the evaluation results in non default location `./results` as an artifact in CircleCI:
+To change where the results of the evaluation are being saved, go to the `ai-evals/eval` step, and add the parameter `evals_result_location`: (Note: the eval orb will make the directory if it does not exist).
 
-- Specify the path to save artifacts in a given path. Specify `evals_result_location` on the job step where command `ai-evals/eval` is required.
+```yaml
+- ai-evals/eval:
+    circle_pipeline_id: << pipeline.id >>
+    eval_platform: ...
+    evals_result_location: "./my-results-here"
+    cmd: ...
+```
 
-To post a summary of the results as a PR comment:
+To post a summary of the results as a comment on the PR:
 
-- Generate a Github personal access token with repo scope.
-- Add this token as the environment variable `GITHUB_TOKEN` in the CircleCI project settings.
-- Set the `pr_comment` key to true in the orb step.
-
-This will post a summary of the evaluation results as a PR comment, without exposing any sensitive information from the evaluation.
-
+- Generate a Github Personal Access Token with repo scope.
+- Add this token as the environment variable `GITHUB_TOKEN` in the CircleCI project settings. Alternatively, you can also include this secret in the context created when you setup the LLM Ops integration. This will post a summary of the evaluation results as a PR comment.
 
 The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. So, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run. 
 
@@ -97,4 +101,4 @@ The examples included in this repository use [dynamic configuration](https://cir
     └── requirements.txt
 ```
 
-Happy Evaluating! Let us know if you have any feedback trying these out. Jut submit an [issue](https://github.com/CircleCI-Public/llm-eval-examples/issues) on GitHub, or reach out to us at [ai-feedback@circleci.com](mailto:ai-feedback@circleci.com).
+Happy Evaluating! Let us know if you have any feedback trying these out. Just submit an [issue](https://github.com/CircleCI-Public/llm-eval-examples/issues) on GitHub, or reach out to us at [ai-feedback@circleci.com](mailto:ai-feedback@circleci.com).
