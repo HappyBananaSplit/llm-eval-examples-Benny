@@ -62,6 +62,25 @@ _Some of the parameters are optional based on the eval platform being used._
 Fork this repo to run evaluations on a LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
+The config.yml file uses the ai-evals orb to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
+
+For example, the braintrust job runs the Python script in `braintrust/eval_tutorial.py` by passing it as the `cmd` parameter. It saves the evaluation results to the location specified with `evals_result_location`.
+
+Similarly, the langsmith job runs the Python script in `langsmith/eval.py`.
+
+To save the evaluation results in non default location `./results` as an artifact in CircleCI:
+
+- Specify the path to save artifacts in a given path. Specify `evals_result_location` on the job step where command `ai-evals/eval` is required.
+
+To post a summary of the results as a PR comment:
+
+- Generate a Github personal access token with repo scope.
+- Add this token as the environment variable `GITHUB_TOKEN` in the CircleCI project settings.
+- Set the `pr_comment` key to true in the orb step.
+
+This will post a summary of the evaluation results as a PR comment, without exposing any sensitive information from the evaluation.
+
+
 The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. So, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run. 
 
 ```shell
