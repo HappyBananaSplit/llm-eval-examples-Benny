@@ -6,7 +6,7 @@ Collection of LLM eval examples using [ai-evals orb](https://circleci.com/develo
 
 Before runnning any of the examples, you'll need:
 
-- A **CircleCI account** connected to yoru code. You can [sign up for free](https://circleci.com/signup/).
+- A **CircleCI account** connected to your code. You can [sign up for free](https://circleci.com/signup/).
 - An **OpenAI account**. Sign up for an OpenAI account at [openai.com](https://openai.com) to access their platform and API. Once logged into your OpenAI account, genreate your API key. Make note of the `API Key` and `Organization ID`.
 
 Depending on your choice of evaluation provider, you will also need one of the following:
@@ -50,7 +50,7 @@ _Some of the parameters are optional based on the eval platform being used._
 
 - `braintrust_experiment_name` (optional) - Braintrust experiment name. An experiment name is generated if not set. (default: `''`)
 
-##### Langsmith specific parameters
+##### LangSmith specific parameters
 
 - `langsmith_endpoint` - Langsmith API endpoint (default: `''`)
 
@@ -59,10 +59,10 @@ _Some of the parameters are optional based on the eval platform being used._
 
 ## Get started
 
-Fork this repo to run sample evaluations on a simple LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
+Fork this repo to run evaluations on a LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
 This repository includes evaluations that can be run on two evaluation platfomrs: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
-The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. In other words, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your Langsmith evaluations will be run. 
+The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. In other words, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run. 
 
 ```shell
 .
