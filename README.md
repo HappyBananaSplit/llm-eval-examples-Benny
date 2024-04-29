@@ -52,9 +52,9 @@ _Some of the parameters are optional based on the eval platform being used._
 
 ##### LangSmith specific parameters
 
-- `langsmith_endpoint` - Langsmith API endpoint (default: `''`)
+- `langsmith_endpoint` - LangSmith API endpoint (default: `''`)
 
-- `langsmith_experiment_name` (optional) - Langsmith experiment name. An experiment name is generated if not set. (default: `''`)
+- `langsmith_experiment_name` (optional) - LangSmith experiment name. An experiment name is generated if not set. (default: `''`)
 
 
 ## Get started
@@ -62,7 +62,7 @@ _Some of the parameters are optional based on the eval platform being used._
 Fork this repo to run evaluations on a LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
-The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. In other words, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run. 
+The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. So, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run. 
 
 ```shell
 .
