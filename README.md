@@ -1,6 +1,6 @@
 # LLM Eval Examples
 
-Collection of LLM eval examples using [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) on CircleCI.
+Collection of LLM eval examples using the [CircleCI Evals Orb](https://circleci.com/developer/orbs/orb/circleci/evals).
 
 ## Prerequisites
 
