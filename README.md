@@ -32,7 +32,7 @@ The [CircleCI Evals Orb](https://circleci.com/developer/orbs/orb/circleci/evals)
 
 Given the volatile nature of evaluations, evaluations orchestrated by the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) do not halt the pipeline if an evaluation fails. This approach ensures that the inherent flakiness of evaluations does not disrupt the development cycle.
 
-Instead, a summary of the evaluation results can _optionally_ be presented :
+Instead, a summary of the evaluation results can _optionally_ be presented:
 
 - as a comment on the corresponding GitHub pull request
 - as an artifact within the CircleCI User Interface
