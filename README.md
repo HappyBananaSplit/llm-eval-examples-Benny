@@ -77,7 +77,11 @@ The dataset contains a list of topics which we want ChatGPT to write poems about
 
 When evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact. 
 
-<img width="649" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
+<div style="text-align:center; padding:12px" >
+       <img src=https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdc" alt="circleci-vscode-pipelines-settings" width="450"/>
+   </div>
+
+<img width="400" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
 If a Github Token has been set up, the orb will also post eval results as a PR comment: 
 
