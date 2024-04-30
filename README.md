@@ -1,6 +1,6 @@
 # LLM Eval Examples
 
-Collection of LLM eval examples using [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals) on CircleCI.
+Collection of LLM eval examples using [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) on CircleCI.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Instead, a summary of the evaluation results can _optionally_ be presented :
 
 ### Orb Parameters
 
-The [ai-evals orb](https://github.com/circleci-public/ai-evals-orb) accepts the following parameters:
+The [evals orb](https://github.com/circleci-public/evals-orb) accepts the following parameters:
 
 _Some of the parameters are optional based on the eval platform being used._
 
@@ -59,21 +59,21 @@ _Some of the parameters are optional based on the eval platform being used._
 
 ## Getting started
 
-Fork this repo to run evaluations on a LLM-based application using the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals). 
+Fork this repo to run evaluations on a LLM-based application using the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals). 
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
 At a high level, when the workflow runs, our prompt is sent to OpenAI. We then get the results, and those are then fed to the respective eval platform. CircleCI will then store the results as an Artifact which you can go view. As well, if you've setup a Github Token CircleCI will post the eval result as a comment on your pull request.
 
-The `.circleci/run_evals_config.yml` file uses the [ai-evals orb](https://circleci.com/developer/orbs/orb/circleci/ai-evals) to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
+The `.circleci/run_evals_config.yml` file uses the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
 
 For example, the braintrust job runs the Python script in `braintrust/eval_tutorial.py` by passing it as the `cmd` parameter. It saves the evaluation results to the location specified with `evals_result_location`.
 
 Similarly, the langsmith job runs the Python script in `langsmith/eval.py`.
 
-To change where the results of the evaluation are being saved, go to the `ai-evals/eval` step, and add the parameter `evals_result_location`: (Note: the eval orb will make the directory if it does not exist).
+To change where the results of the evaluation are being saved, go to the `evals/eval` step, and add the parameter `evals_result_location`: (Note: the eval orb will make the directory if it does not exist).
 
 ```yaml
-- ai-evals/eval:
+- evals/eval:
     circle_pipeline_id: << pipeline.id >>
     eval_platform: ...
     evals_result_location: "./my-results-here"
