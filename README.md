@@ -77,15 +77,11 @@ The dataset contains a list of topics which we want ChatGPT to write poems about
 
 When evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact. 
 
-<div style="text-align:center; padding:12px" >
-       <img src=https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdc" alt="circleci-vscode-pipelines-settings" width="450"/>
-   </div>
-
-<img width="400" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
+<img style="text-align:center" width="400" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
 If a Github Token has been set up, the orb will also post eval results as a PR comment: 
 
-<img width="1150" alt="Screenshot 2024-04-30 at 10 21 48" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/73c628b0-de35-41f2-8f06-7e486691cea6">
+<img style="text-align:center" width="700" alt="Screenshot 2024-04-30 at 10 21 48" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/73c628b0-de35-41f2-8f06-7e486691cea6">
 
 The `.circleci/run_evals_config.yml` file uses the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
 
