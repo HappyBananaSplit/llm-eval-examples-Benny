@@ -100,6 +100,8 @@ If a `GITHUB_TOKEN` has been set up, the orb will also post summarized eval resu
 
 <img style="text-align:center" width="700" alt="Screenshot 2024-04-30 at 10 21 48" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/73c628b0-de35-41f2-8f06-7e486691cea6">
 
+### Config
+
 The `.circleci/run_evals_config.yml` file uses the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) to define jobs that run the evaluation code in each example folder. The orb handles setting up the evaluation environment, executing the evaluations, and collecting the results.
 
 For example, the Braintrust job runs the Python script in `braintrust/eval_tutorial.py` by passing it as the `cmd` parameter. It saves the evaluation results to the location specified with `evals_result_location`.
