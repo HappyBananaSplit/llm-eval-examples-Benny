@@ -14,7 +14,9 @@ Depending on your choice of evaluation provider, you will also need one of the f
 - A **Braintrust account**. Sign up for a Braintrust account at [braintrustdata.com](https://www.braintrustdata.com) to access their platform and API. Once logged into your Braintrust account, generate an `API Key` and make note of it.
 - A **LangSmith account**. Sign up for a LangSmith account at [langsmith.com](https://langsmith.com) to use their language models API. Once logged into your LangSmith account, go to the API Keys page in your account settings to generate an API key. Copy this key to authenticate when using the LangSmith API.
 
-The API keys will allow you to authenticate and interact with the APIs of your LLMOps tools to leverage their services. See their documentation for more details on capabilities and usage.
+The API keys will allow you to authenticate and interact with the APIs of your LLMOps tools to leverage their services.
+
+See their documentation for more details on capabilities and usage.
 
 ### Entering credentials into CircleCI
 
