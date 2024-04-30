@@ -37,7 +37,7 @@ Instead, a summary of the evaluation results can _optionally_ be presented:
 - as a comment on the corresponding GitHub pull request
 - as an artifact within the CircleCI User Interface
 
-### Evals Orb Parameters
+### Orb Parameters
 
 The [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) accepts the following parameters:
 
