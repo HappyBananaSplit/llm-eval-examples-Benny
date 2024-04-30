@@ -96,7 +96,9 @@ For example, the Braintrust job runs the Python script in `braintrust/eval_tutor
 
 Similarly, the LangSmith job runs the Python script in `langsmith/eval.py`.
 
-To change where the results of the evaluation are being saved, go to the `evals/eval` step, and add the parameter `evals_result_location`: (Note: the evals orb will make the directory if it does not exist).
+To change where the results of the evaluation are being saved, go to the `evals/eval` step, and add the parameter `evals_result_location`:
+
+_Note: the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) will make the directory if it does not exist._
 
 ```yaml
 - evals/eval:
