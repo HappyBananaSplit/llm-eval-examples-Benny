@@ -62,8 +62,7 @@ _Some of the parameters are optional based on the eval platform being used._
 Fork this repo to run evaluations on a LLM-based application using the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals). 
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
-In both cases, the examples are very simple.
-In the case of Braintrust, we import from HuggingFace an evaluation dataset of news articles, and use ChatGPT to help classify them into category. The dataset contains both the news article and the expected category for each of them. As an evaluation metric, we use the Levenshtein distance, which tells us how far the answer provided by ChatGPT is from the expected answer. Each individual test case is scored, and a summary score for the whole dataset is also available.
+The Braintrust example imports from HuggingFace an evaluation dataset of news articles, and uses ChatGPT to help classify them into category. The dataset contains both the news article and the expected category for each of them. As an evaluation metric, we use the Levenshtein distance, which tells us how distant the answer provided by ChatGPT is from the expected answer. Each individual test case is scored, and a summary score for the whole dataset is also available.
 
 <img style="text-align:center" width="300" alt="CircleCI-llmops" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d">
 
@@ -73,9 +72,9 @@ cd ./experiments/ai-langsmith
 pip install -r ./requirements.txt
 python dataset.py
 ```
-The dataset contains a list of topics which we want ChatGPT to write poems about. It also contains, for each topic, a letter or word which should not be included in the poem. In our evaluation, we use the LangSmith `ConstraintEvaluator` to verify whether our LLM has accurately avoided using the letter or word. Again, in Langsmith we are able to access all scores by test case.
+The dataset contains a list of topics which we want ChatGPT to write poems about. It also contains, for each topic, a letter or word which should not be included in the poem. In our evaluation, we use the LangSmith `ConstraintEvaluator` to verify whether our LLM has accurately avoided using the letter or word. By accessing the LangSmith platform we are able to access all scores by test case.
 
-When evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact. 
+In both cases, as evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact. 
 
 <img style="text-align:center" width="370" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
