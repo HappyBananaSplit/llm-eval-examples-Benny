@@ -86,7 +86,7 @@ In both cases, as evaluations are run through the orb, CircleCI stores the summa
 
 <img style="text-align:center" width="370" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
-If a Github Token has been set up, the orb will also post eval results as a PR comment:
+If a `GITHUB_TOKEN` has been set up, the orb will also post summarized eval results as a PR comment:
 
 <img style="text-align:center" width="700" alt="Screenshot 2024-04-30 at 10 21 48" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/73c628b0-de35-41f2-8f06-7e486691cea6">
 
