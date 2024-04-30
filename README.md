@@ -65,7 +65,7 @@ This repository includes evaluations that can be run on two evaluation platforms
 In both cases, the examples are very simple.
 In the case of Braintrust, we import from HuggingFace an evaluation dataset of news articles, and use ChatGPT to help classify them into category. The dataset contains both the news article and the expected category for each of them. As an evaluation metric, we use the Levenshtein distance, which tells us how far the answer provided by ChatGPT is from the expected answer. Each individual test case is scored, and a summary score for the whole dataset is also available.
 
-![Screenshot 2024-04-30 at 10 05 37](https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d)
+<img style="text-align:center" width="500" alt="CircleCI-llmops" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d">
 
 In the LangSmith examples, we instanciate the dataset ourselves. Ahead of triggering your evaluation via CircleCI, run:
 ```
@@ -77,7 +77,7 @@ The dataset contains a list of topics which we want ChatGPT to write poems about
 
 When evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact. 
 
-<img style="text-align:center" width="400" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
+<img style="text-align:center" width="370" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
 If a Github Token has been set up, the orb will also post eval results as a PR comment: 
 
