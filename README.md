@@ -26,20 +26,20 @@ This will create a context with environment variables with the credentials you'v
 
 ![LLMOps Integration Context](images/LLMOps-Integration-Context.png)
 
-## The CircleCI LLM-evaluations Orb
+## The CircleCI Evals Orb
 
-The LLM-evaluations Orb simplifies the definition and execution of evaluation jobs using popular third-party tools, and generates reports of evaluation results.
+The [CircleCI Evals Orb](https://circleci.com/developer/orbs/orb/circleci/evals) simplifies the definition and execution of evaluation jobs using popular third-party tools, and generates reports of evaluation results.
 
-Given the volatile nature of evaluations, evaluations orchestrated by the CircleCI LLM-evaluations orb do not halt the pipeline if an evaluation fails. This approach ensures that the inherent flakiness of evaluations does not disrupt the development cycle.
+Given the volatile nature of evaluations, evaluations orchestrated by the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) do not halt the pipeline if an evaluation fails. This approach ensures that the inherent flakiness of evaluations does not disrupt the development cycle.
 
 Instead, a summary of the evaluation results can _optionally_ be presented :
 
 - as a comment on the corresponding GitHub pull request
 - as an artifact within the CircleCI User Interface
 
-### Orb Parameters
+### Evals Orb Parameters
 
-The [evals orb](https://github.com/circleci-public/evals-orb) accepts the following parameters:
+The [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) accepts the following parameters:
 
 _Some of the parameters are optional based on the eval platform being used._
 
@@ -96,7 +96,7 @@ For example, the Braintrust job runs the Python script in `braintrust/eval_tutor
 
 Similarly, the LangSmith job runs the Python script in `langsmith/eval.py`.
 
-To change where the results of the evaluation are being saved, go to the `evals/eval` step, and add the parameter `evals_result_location`: (Note: the eval orb will make the directory if it does not exist).
+To change where the results of the evaluation are being saved, go to the `evals/eval` step, and add the parameter `evals_result_location`: (Note: the evals orb will make the directory if it does not exist).
 
 ```yaml
 - evals/eval:
