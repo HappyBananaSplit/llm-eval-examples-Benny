@@ -65,7 +65,7 @@ This repository includes evaluations that can be run on two evaluation platforms
 In both cases, the examples are very simple.
 In the case of Braintrust, we import from HuggingFace an evaluation dataset of news articles, and use ChatGPT to help classify them into category. The dataset contains both the news article and the expected category for each of them. As an evaluation metric, we use the Levenshtein distance, which tells us how far the answer provided by ChatGPT is from the expected answer. Each individual test case is scored, and a summary score for the whole dataset is also available.
 
-<img style="text-align:center" width="500" alt="CircleCI-llmops" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d">
+<img style="text-align:center" width="300" alt="CircleCI-llmops" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d">
 
 In the LangSmith examples, we instanciate the dataset ourselves. Ahead of triggering your evaluation via CircleCI, run:
 ```
