@@ -127,4 +127,8 @@ The examples included in this repository use [dynamic configuration](https://cir
     └── requirements.txt
 ```
 
-Happy Evaluating! Let us know if you have any feedback trying these out. Submit an [issue](https://github.com/CircleCI-Public/llm-eval-examples/issues) on GitHub, or reach out to us at [ai-feedback@circleci.com](mailto:ai-feedback@circleci.com).
+## Happy Evaluating!
+
+Let us know if you have any feedback trying these out.
+
+Submit an [issue](https://github.com/CircleCI-Public/llm-eval-examples/issues) on GitHub, or reach out to us at [ai-feedback@circleci.com](mailto:ai-feedback@circleci.com).
