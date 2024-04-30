@@ -18,7 +18,9 @@ The API keys will allow you to authenticate and interact with the APIs of your L
 
 ### Entering credentials into CircleCI
 
-Entering your OpenAI, Braintrust, and LangSmith credentials into CircleCI is easy. Navigate to `Project Settings` > `LLMOps`, and fill out the form by Clicking `Set up Integration`.
+Entering your OpenAI, Braintrust, and LangSmith credentials into CircleCI is easy.
+
+Just navigate to `Project Settings` > `LLMOps` and fill out the form by Clicking `Set up Integration`.
 
 ![Create Context](images/create-context.png)
 
