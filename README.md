@@ -92,7 +92,7 @@ The dataset contains a list of topics which we want ChatGPT to write poems about
 
 ### The Results
 
-In both cases, as evaluations are run through the orb, CircleCI stores the summary of eval results as a job artifact.
+In both cases, as evaluations are run through the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals), CircleCI stores the summary of eval results as a job artifact.
 
 <img style="text-align:center" width="370" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
