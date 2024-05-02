@@ -96,7 +96,7 @@ In both cases, as evaluations are run through the [evals orb](https://circleci.c
 
 <img style="text-align:center" width="370" alt="Screenshot 2024-04-30 at 10 19 53" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/9df64653-d1b7-41c5-8830-f8d8d497bdca">
 
-If a `GITHUB_TOKEN` has been set up, the orb will also post summarized eval results as a PR comment:
+If a [`GITHUB_TOKEN`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) has been set up, the orb will also post summarized eval results as a PR comment:
 
 <img style="text-align:center" width="700" alt="Screenshot 2024-04-30 at 10 21 48" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/73c628b0-de35-41f2-8f06-7e486691cea6">
 
@@ -123,7 +123,7 @@ _Note: the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) w
 To enable the orb to post a summary of the evaluation results as a PR comment:
 
 - Generate a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
-- Add this token as the environment variable `GITHUB_TOKEN` in CircleCI project settings. Alternatively, you can include this secret in the context that was created when you set up the LLMOps integration.
+- Add this token as the environment variable [`GITHUB_TOKEN`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) in CircleCI project settings. Alternatively, you can include this secret in the context that was created when you set up the LLMOps integration.
 
 The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. So, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run.
 
