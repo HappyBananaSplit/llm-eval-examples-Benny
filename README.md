@@ -47,25 +47,27 @@ The [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) accepts 
 
 _Some of the parameters are optional based on the eval platform being used._
 
-##### Common parameters
+#### Common parameters
 
-- `circle_pipeline_id` - CircleCI Pipeline ID
+- **`circle_pipeline_id`**: CircleCI Pipeline ID
 
-- `cmd` - Command to run the evaluation
+- **`cmd`**: Command to run the evaluation
 
-- `eval_platform` - Evaluation platform (e.g. `braintrust`, `langsmith` etc. - default: `braintrust`)
+- **`eval_platform`**: Evaluation platform (e.g. `braintrust`, `langsmith` etc.; default: `braintrust`)
 
-- `evals_result_location` - Location to save evaluation results (default: `./results`)
+- **`evals_result_location`**: Location to save evaluation results (default: `./results`)
 
-##### Braintrust-specific parameters
+#### Braintrust-specific parameters
 
-- `braintrust_experiment_name` (optional) - Braintrust experiment name. We will generate a unique name based on an MD5 hash of "`<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`" if no `braintrust_experiment_name` is provided.
+- **`braintrust_experiment_name`** _(optional)_: Braintrust experiment name.
+  - If no value is provided, an experiment name will be auto-generated based on an MD5 hash of `<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`.
 
-##### LangSmith-specific parameters
+#### LangSmith-specific parameters
 
-- `langsmith_endpoint` - (optional) LangSmith API endpoint (default: `https://api.smith.langchain.com`)
+- **`langsmith_endpoint`** _(optional)_: LangSmith API endpoint (default: `https://api.smith.langchain.com`)
 
-- `langsmith_experiment_name` (optional) - LangSmith experiment name. We will generate a unique name based on an MD5 hash of "`<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`" if no `langsmith_experiment_name` is provided.
+- **`langsmith_experiment_name`** _(optional)_: LangSmith experiment name.
+  - If no value is provided, an experiment name will be auto-generated based on an MD5 hash of `<CIRCLE_PIPELINE_ID>_<CIRCLE_WORKFLOW_ID>`.
 
 ## Getting started
 
@@ -123,7 +125,7 @@ _Note: the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals) w
 To enable the orb to post a summary of the evaluation results as a PR comment:
 
 - Generate a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) with `repo` scope.
-- Add this token as the environment variable [`GITHUB_TOKEN`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) in CircleCI project settings. Alternatively, you can include this secret in the context that was created when you set up the LLMOps integration.
+- Add this token as the environment variable [`GITHUB_TOKEN`](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) in CircleCI project settings. Alternatively, you could include this secret in the context that was created when you set up the LLMOps integration.
 
 The examples included in this repository use [dynamic configuration](https://circleci.com/docs/dynamic-config/) to selectively run only the evaluations defined in the folder that changed. So, for changes committed to the folder `braintrust`, only your Braintrust evaluations will be run; for changes committed to the folder `langsmith`, only your LangSmith evaluations will be run.
 
