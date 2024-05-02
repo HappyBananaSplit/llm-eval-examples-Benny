@@ -38,8 +38,8 @@ Given the volatile nature of evaluations, evaluations orchestrated by the [evals
 
 Instead, a summary of the evaluation results can _optionally_ be presented:
 
-- as a comment on the corresponding GitHub pull request
 - as an artifact within the CircleCI User Interface
+- as a comment on the corresponding GitHub pull request (requires a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens))
 
 ### Orb Parameters
 
