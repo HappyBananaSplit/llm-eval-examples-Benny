@@ -72,13 +72,13 @@ _Some of the parameters are optional based on the eval platform being used._
 Fork this repo to run evaluations on a LLM-based application using the [evals orb](https://circleci.com/developer/orbs/orb/circleci/evals).
 This repository includes evaluations that can be run on two evaluation platforms: [Braintrust](https://www.braintrustdata.com/) and [LangSmith](https://smith.langchain.com/). Each example folder contains instructions and sample code to run evaluations.
 
-### The Braintrust Example
+### Braintrust Example
 
 The Braintrust example imports from HuggingFace an evaluation dataset of news articles, and uses ChatGPT to help classify them into category. The dataset contains both the news article and the expected category for each of them. As an evaluation metric, we use the Levenshtein distance, which tells us how distant the answer provided by ChatGPT is from the expected answer. Each individual test case is scored, and a summary score for the whole dataset is also available.
 
 <img style="text-align:center" width="300" alt="CircleCI-llmops" src="https://github.com/CircleCI-Public/llm-eval-examples/assets/19594309/93595b21-abe2-4c74-8a15-1ed08e19dd0d">
 
-### The LangSmith Example
+### LangSmith Example
 
 In the LangSmith example, we instantiate the dataset ourselves. Ahead of triggering your evaluation via CircleCI, run the following commands:
 
